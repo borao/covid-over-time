@@ -1,6 +1,6 @@
 import io
 
-from flask import Flask, Response
+from flask import Flask, Response, render_template, request
 from aggregate import get_county_data
 
 
@@ -12,8 +12,8 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
+def index(name=None):
+    return render_template('index.html', name=name)
 
 
 @app.route('/result')
