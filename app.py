@@ -16,9 +16,9 @@ def index(name=None):
     return render_template('index.html', name=name)
 
 
-@app.route('/result')
+@app.route('/result', methods=['GET', 'POST'])
 def result():
-    fig = get_county_data("Orange", "California")
+    fig = get_county_data(request.form.get('state'), request.form.get('county'))
     output = io.BytesIO()
     FigureCanvas(fig).print_png(output)
     return Response(output.getvalue(), mimetype='image/png')

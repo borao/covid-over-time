@@ -13,20 +13,44 @@
     <title>COVID-19 Over Time</title>
 </head>
 <body>
-<div class="container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">COVID-19 Over Time</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+{#  <div class="collapse navbar-collapse" id="navbarText">#}
+{#    <ul class="navbar-nav mr-auto">#}
+{#      <li class="nav-item active">#}
+{#        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>#}
+{#      </li>#}
+{#      <li class="nav-item">#}
+{#        <a class="nav-link" href="#">Features</a>#}
+{#      </li>#}
+{#      <li class="nav-item">#}
+{#        <a class="nav-link" href="#">Pricing</a>#}
+{#      </li>#}
+{#    </ul>#}
+{#    <span class="navbar-text">#}
+{#      Navbar text with an inline element#}
+{#    </span>#}
+{#  </div>#}
+</nav>
+<div class="container" style="padding-top: 5%">
     <div class="row">
         <div class="col-sm">
-            <form>
+            <form method="POST" action="/result">
                 <div class="form-group">
                     <label for="exampleInputEmail1">State</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    <input type="state" class="form-control" id="state" name="state" aria-describedby="stateHelp"
                            placeholder="California">
-                    <small id="emailHelp" class="form-text text-muted">Please do not abbreviate. Ex: California</small>
+                    <small id="stateHelp" class="form-text text-muted">Please do not abbreviate. Ex: California</small>
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">County</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Orange">
-                    <small id="passwordHelp" class="form-text text-muted">Please do not include the word 'County'. Ex: Orange</small>
+                    <input type="county" class="form-control" id="county" name="county" aria-describedby="stateHelp"
+                           placeholder="Orange">
+                    <small id="countyHelp" class="form-text text-muted">Please do not include the word 'County'. Ex:
+                        Orange</small>
 
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
@@ -34,6 +58,15 @@
         </div>
     </div>
 </div>
+<div class="container" style="padding-top: 5%">
+    <div class="row">
+        <div class="col-sm">
+            <span>This data is graciously provided by The New York Times. Please see the license <a href="https://github.com/nytimes/covid-19-data/blob/master/LICENSE">here</a>. The New York Times and the developer do not accept any responsibility for the content of this website. It exists as-is, for a not-for-profit educational purposes related to our current public health crisis.<br /><br />This content is not endorsed by The New York Times - they only supply the <a href="https://github.com/nytimes/covid-19-data">data</a>.</span>
+            <br><br><span>The site is still under construction. Check back for more features!</span>
+        </div>
+    </div>
+</div>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
